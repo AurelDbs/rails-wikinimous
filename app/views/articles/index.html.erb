@@ -1,17 +1,23 @@
 <!-- <h1>Articles#index</h1>
 <p>Find me in app/views/articles/index.html.erb</p> -->
 
-<h1>List of all articles</h1>
+<div class="navbar">
+  <%= link_to "Wikinymous", articles_path %>
+  <%= link_to "Add a new article", new_article_path %>
+</div>
 
-<% @articles.each do |article| %>
-  <h3><%= link_to article.title, article_path(article) %></h3>
-  <p><%= article.content %></p>
-    <%= link_to "Delete", article_path(article),
-    method: :delete,
-    data: { confirm: "Are you sure?" } %>
-    <%= link_to "Edit", edit_article_path(article) %>
-    <hr>
-<% end %>
+<div class="container">
+  <h1 class="text-center">List of all articles</h1>
+
+  <% @articles.each do |article| %>
+    <h3><%= link_to article.title, article_path(article) %></h3>
+    <p><%= article.content %></p>
+      <%= link_to "Delete", article_path(article),
+      method: :delete,
+      data: { confirm: "Are you sure?" }, id: "delete" %>
+      <%= link_to "Edit", edit_article_path(article), id: "edit" %>
+      <hr>
+  <% end %>
+</div>
 
 
-<%= link_to "Add a new article", new_article_path %>

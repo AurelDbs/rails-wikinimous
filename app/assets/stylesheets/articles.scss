@@ -1,3 +1,48 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f4f4f4;
+  padding: 20px 10px;
+  border-bottom: 1px solid #ccc;
+}
+.navbar a {
+  text-decoration: none;
+  color: #aaa;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+h1 {
+  color: #888;
+}
+.container a {
+  text-decoration: none;
+  color: #888;
+  font-size: 18px;
+  font-weight: light;
+}
+.container p {
+  color: #888;
+  font-size: 16px;
+  font-weight: light;
+}
+#delete {
+ padding: 15px;
+ margin-right: 10px;
+ background-color: #eee;
+}
+#edit {
+  padding: 15px;
+  background-color: #eee;
+}
+hr {
+  margin: 25px;
+}
