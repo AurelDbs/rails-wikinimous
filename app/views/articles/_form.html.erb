@@ -1,0 +1,22 @@
+<%= form_for(@article) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :content, style: 'display: block' %>
+  <%= f.text_area :content, style: 'display: block; height: 150px; width: 300px' %>
+  <%= f.submit %>
+<% end %>
+
+<div id="editor"></div>
+
+<script>
+  var editor = ace.edit("editor");
+  editor.setTheme("ace/theme/monokai");
+  editor.getSession().setMode("ace/mode/javascript");
+  var textarea = $('textarea[name="article[content]"]').hide();
+
+  editor.getSession().setValue(textarea.val());
+editor.getSession().on('change', function(){
+  textarea.val(editor.getSession().getValue());
+});
+</script>
+
